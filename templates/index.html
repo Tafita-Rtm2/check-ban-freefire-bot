@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Fire Banned Checker</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Free Fire Account Tools</h1>
+        <form action="/check" method="post">
+            <input type="text" name="uid" placeholder="Enter Free Fire ID" required>
+            <button type="submit">Check Ban Status</button>
+        </form>
+        <form action="/unban" method="post">
+            <input type="text" name="uid" placeholder="Enter Free Fire ID" required>
+            <button type="submit">Request Unban (Coming Soon)</button>
+        </form>
+    </div>
+</body>
+</html>

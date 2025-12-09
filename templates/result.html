@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Fire Banned Checker - Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Result for ID: {{ uid }}</h1>
+        {% if ban_status %}
+            {% if ban_status.is_banned %}
+                <p><strong>Status:</strong> <span style="color: red;">Banned</span></p>
+                <p><strong>Nickname:</strong> {{ ban_status.nickname }}</p>
+                <p><strong>Region:</strong> {{ ban_status.region }}</p>
+                <p><strong>Period:</strong> {{ ban_status.period }}</p>
+
+            {% else %}
+                <p><strong>Status:</strong> <span style="color: green;">Not Banned</span></p>
+                <p><strong>Nickname:</strong> {{ ban_status.nickname }}</p>
+                <p><strong>Region:</strong> {{ ban_status.region }}</p>
+
+            {% endif %}
+        {% else %}
+            <p>Could not retrieve ban status. Please try again later.</p>
+        {% endif %}
+        <a href="/">Check another ID</a>
+    </div>
+</body>
+</html>
